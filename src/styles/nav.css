@@ -1,0 +1,35 @@
+#shopping-cart-icon{
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+
+}
+
+a{
+    cursor: pointer;
+}
+
+#shopping-cart-link{
+    margin-right: -20px;
+    align-self: flex-end;
+}
+
+#trolley-counter{
+    border-radius: 50%;
+    border-width:2px ;
+    height: 20px;
+    width: 20px; 
+    text-align: center;
+    background-color:red;
+    color:white;
+    
+}
+
+
+#profile-nav{
+    display: flex;
+    justify-content: row;
+    align-items: center;
+    margin-left:auto;
+
+}
