@@ -1,9 +1,10 @@
 import React from "react";
-//import { useUserContext } from "../contexts/UserContext";
+import { useUserAuth } from "../contexts/UserContext";
 import '../styles/home.css'
 
 
 const Home = () => {
+    let {IsLoggedIn,WhoIsLoggedIn} = useUserAuth();
         return (<div id="startup-page">
             <nav id="navbar">
                 <div id="dropdown-menu">
@@ -18,14 +19,7 @@ const Home = () => {
                         </div>
                 </div>
 
-                <a href="/login">
-                    <p>Login</p>
-                </a>
-
-                <a href="/signup">
-                    <p>Sign Up</p>
-                    </a>
-
+               
 
          
             </nav>
@@ -37,6 +31,8 @@ const Home = () => {
                     <h1 id="site-title">
                     <em>Welcome to In HighSpirits🍷</em>
                     </h1>
+
+                    <h5>{IsLoggedIn?`logged in as ${WhoIsLoggedIn}`:"not logged in"}</h5>
 
                     
 
@@ -50,11 +46,11 @@ const Home = () => {
 
 
                 <br/>
-                <strong> <p id="greeting-msg"> 
+               {!IsLoggedIn? <strong> <p id="greeting-msg"> 
                 
                 <a href="/login">Login</a> or <a href="/signup">Signup</a> to get started  
                 
-                </p> </strong>
+                </p> </strong>:""}
                 
 
 

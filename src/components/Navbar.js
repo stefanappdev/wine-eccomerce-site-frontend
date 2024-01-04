@@ -1,38 +1,40 @@
 import react from "react";
-import { useParams,Outlet } from "react-router-dom";
-//import { useUserContext } from "../contexts/UserContext";
+import {Outlet, Link } from "react-router-dom";
+import { useUserAuth } from "../contexts/UserContext";
 import "../styles/nav.css"
 
 
 const Navbar = ()=>{
-    let params = useParams()
+   let{IsLoggedIn,UserData}=useUserAuth();
     
     return(
         <nav id="profile-navbar">
 
-        <a href="/">  
+        <Link to={"/"}>  
             home
-        </a>    
+        </Link>    
 
-          
+        <Link to="/about">  
+           about Us
+        </Link>  
 
-         <a href="/beers">  
-            beers
-        </a> 
+        <Link to={IsLoggedIn?`/users/${UserData._id}/home`:"/login"}>  
+           profile
+        </Link >  
 
-        
-        <a href="/wines">  
-           wines
-        </a> 
 
-        <a id="shopping-cart-link" href={`/users/${params.id}/checkout`} >
+
+        <a id="shopping-cart-link" href="#" >
          <img id="shopping-cart-icon" src="./images/shopping-cart.png" alt="checkout"/>    
         </a>
         <div id="trolley-counter">0</div>
 
-            <button>login</button>
-       
+            
+         <Link to="/login">
+            <button >login</button>
+         </Link>
 
+    
 
        
         <Outlet/>
