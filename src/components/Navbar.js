@@ -18,15 +18,21 @@ const Navbar = ()=>{
            about Us
         </Link>  
 
+
+        <Link to="/products">  
+          products
+        </Link>  
+
+        
         <Link to={IsLoggedIn?`/users/${UserData._id}/home`:"/login"}>  
            profile
         </Link >  
 
 
 
-        <a id="shopping-cart-link" href="#" >
+        <Link id="shopping-cart-link" to={IsLoggedIn?`/users/${UserData._id}/checkout`:"/login"} >
          <img id="shopping-cart-icon" src="./images/shopping-cart.png" alt="checkout"/>    
-        </a>
+        </Link>
         <div id="trolley-counter">0</div>
 
             

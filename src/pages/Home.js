@@ -1,5 +1,6 @@
 import React from "react";
 import { useUserAuth } from "../contexts/UserContext";
+import { Link } from "react-router-dom";
 import '../styles/home.css'
 
 
@@ -10,10 +11,19 @@ const Home = () => {
                 <div id="dropdown-menu">
                     <img src="./images/hamburger-menu.svg" alt="dropdown menu"/>
                         <div id="dropdown-content">
-                            <a href="/views">
+                            <Link to="/products">
                                 
                                 <p>see all products </p>   
-                            </a>
+                            </Link>
+                            <Link to="/products/wines">
+                                
+                                <p>Wines </p>   
+                            </Link>
+
+                            <Link to="/products/beers">
+                                
+                                <p>Beers </p>   
+                            </Link>
                          
                             
                         </div>
