@@ -1,5 +1,6 @@
 import React,{useState,useEffect} from 'react'
-import "../styles/wines.css"
+import { Link } from 'react-router-dom'
+import "../styles/beers.css"
 
 
 
@@ -43,7 +44,7 @@ const ViewAllBeers = () => {
               <h5 className="card-title">{product.productName}</h5>
               <p className="card-text">description:{product.description!==""?product.description:"No description available"}</p>
            
-              <a href={`/beers/${product._id}`} className="#">more info</a>
+              <Link to={`/products/beers/${product._id}`} className="#">more info</Link>
                
             </div>
         </div>

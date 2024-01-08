@@ -13,50 +13,52 @@ import Products from "./pages/Products"
 import ViewAllBeers from './pages/ViewAllBeers';
 import ViewOneBeer from './pages/ViewOneBeer';
 import Checkout from './pages/Checkout';
+import { CartContextProvider } from './contexts/CartContext';
 
 export default function App() {
     return (
       
 
+    <UserAuthProvider>        
+        <CartContextProvider>
+          
+                
+                <Router>
+                    <Navbar />
+                    <Routes>
+                        
+                        <Route path="/" element={<Home />} />
+                        <Route path="/login" element={<LoginPage />} />   
+                        <Route path="/about" element={<AboutPage />} />  
+                        
+                        
+                        <Route path="/users">
+
+                            <Route path=":id/home" element={<RequireAuth><Profile/></RequireAuth>}/>
+                            <Route path=":id/checkout" element={<RequireAuth><Checkout/></RequireAuth>}/>
+                        </Route>
+
+
+
+                        
+                        
+                        <Route path="/products" element={<Products />}>
+                                <Route path="wines" element={<ViewAllWines/>}/>
+                                <Route path="wines/:id" element={<ViewOneWine/>}/>
+                                <Route path="beers" element={<ViewAllBeers/>}/>
+                                <Route path="beers/:id" element={<ViewOneBeer/>}/>
+                        
+                            
+                            
+                        </Route>
+
+
+
+                    </Routes>
+                </Router>
             
-
-        <UserAuthProvider>    
-             
-            <Router>
-                <Navbar />
-                <Routes>
-                    
-                    <Route path="/" element={<Home />} />
-                     <Route path="/login" element={<LoginPage />} />   
-                    <Route path="/about" element={<AboutPage />} />  
-                    
-                    
-                    <Route path="/users">
-
-                        <Route path=":id/home" element={<RequireAuth><Profile/></RequireAuth>}/>
-                        <Route path=":id/checkout" element={<RequireAuth><Checkout/></RequireAuth>}/>
-                    </Route>
-
-
-
-                    
-                    
-                    <Route path="/products" element={<Products />}>
-                            <Route path="wines" element={<ViewAllWines/>}/>
-			                <Route path="wines/:id" element={<ViewOneWine/>}/>
-                            <Route path="beers" element={<ViewAllBeers/>}/>
-			                <Route path="beers/:id" element={<ViewOneBeer/>}/>
-                    
-                        
-                        
-		            </Route>
-
-
-
-                </Routes>
-            </Router>
-           
-        </UserAuthProvider>     
+        </CartContextProvider>    
+    </UserAuthProvider>      
 
             
        
