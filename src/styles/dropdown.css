@@ -1,0 +1,39 @@
+#dropdown-menu{
+    position: relative;
+}
+
+#dropdown-menu>img{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+
+#dropdown-content{
+    position: absolute;
+    display: none;
+    background-color: rgb(248, 246, 243);
+    padding: 10px;
+    z-index: 1;
+    border-radius: 10px;
+    text-align: center;
+   
+}
+
+
+#dropdown-menu:hover #dropdown-content{
+    position: relative;
+    display: inline-block;
+    right: 50px;
+    top: 60px;
+    cursor: pointer;
+
+   
+}
+
+#dropdown-menu:hover #dropdown-content>a>p{
+    color: black; 
+    text-decoration: none;
+  
+}
