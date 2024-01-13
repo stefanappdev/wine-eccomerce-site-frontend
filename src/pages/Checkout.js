@@ -1,41 +1,49 @@
 import React, { useState } from 'react'
 import { useCartContext } from '../contexts/CartContext'
-import CartItem from './CartItem'
+import { useNavigate } from 'react-router-dom'
+import CartItem from '../components/CartItem'
+import "../components/CheckoutModal.js"
+import "../styles/checkout.css"
+import "../styles/Modal.css"
+import CheckoutModal from '../components/CheckoutModal.js'
 
 function Checkout() {
 
-  let {Cart,RemoveFromCart,ClearCart,Total,setTotal,TotalsArr,setTotalsArr}=useCartContext()
+  let {Cart,RemoveFromCart,ClearCart,Total,setTotal}=useCartContext()
+
  
   
   let [cartamt,setCartamt]=useState(Cart.length)
-  
+  const [OpenModal,setOpenModal]=useState(false)
+
+  let navigate = useNavigate();
  
   
  
   if (cartamt===0){
     setTotal(0)
-    return <h1>Cart is Empty</h1>
+    return (<div id="empty-cart-options">
+      <h1 id="empty-cart-msg">Cart is Empty</h1>
+      <br/>
+      <button  onClick={()=>navigate("/products")}>Add an Item</button>
+          </div>)
   }//empty cart
   
- const CalculateTotal=()=>{
-  let sum=0 
-  for(let x=0;x<TotalsArr.length;x++){
-
-      sum=sum+TotalsArr[x].itemTotalcost
-   }
-   setTotal(sum)
-   console.log("Your total is:",Total)
-   console.log("TotalsArr",TotalsArr)
- }
+ 
+  
 
   const Clear=()=>{
 
     ClearCart();
     setCartamt(0)
     setTotal(0)
-    setTotalsArr([])
+  
     alert("Cart Cleared")
 
+  }
+
+  const showModal=()=>{
+    setOpenModal(prev=>!prev)
   }
 
 
@@ -49,8 +57,8 @@ function Checkout() {
             RemoveFromCart={RemoveFromCart}
             cartamt={cartamt}
             setCartamt={setCartamt} 
-            setTotalsArr={setTotalsArr}
-            TotalsArr={TotalsArr}
+            
+          
             />
       
             </div>) 
@@ -61,28 +69,32 @@ function Checkout() {
   
 
   return (
-   <React.Fragment>
-      
-         
+   <div id="checkout-page">
+       
+      {OpenModal && <div className='overlay'>
+
+          <div id="ModalSection">
+
+           <CheckoutModal OpenModal={OpenModal} setOpenModal={setOpenModal} 
+                    setTotal={setTotal} Total={Total} Cart={Cart}/>
+                    
+            </div>
+          </div>}
         
-          <h1>Checkout Page</h1>
+          <h1 id="page-header">Checkout Page</h1>
           
-          <p>items in cart:{cartamt}</p>
+          <p id="cart-amount">items in cart:{cartamt}</p>
           <div>{items}</div>
-          <br/>
-          <button onClick={Clear}>Clear Cart</button>
+          
+          
+          <div id="checkout-buttons">
+              <button onClick={Clear}>Clear Cart</button>
 
-          <br/>
-          <br/>
-
-          <button onClick={CalculateTotal}>Show Total</button>
-
-          <br/>
-
-          <div>
-
-         
+              <button onClick={showModal}>Confirm</button>
           </div>
+         
+
+        
 
           
           
@@ -93,7 +105,7 @@ function Checkout() {
 
 
 
-      </React.Fragment>
+      </div>
     
   )
 }

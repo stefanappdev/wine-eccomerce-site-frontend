@@ -1,0 +1,18 @@
+#products-page>h1{
+    text-align: center;
+    margin-top: 10px;
+}
+
+
+#products-page{
+    padding-left:20px;
+    background-color: #FADBD8;
+    min-height:100vh;
+}
+
+#products-page>nav{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}

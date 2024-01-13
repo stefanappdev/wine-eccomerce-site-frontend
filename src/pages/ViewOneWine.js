@@ -1,14 +1,21 @@
 import React,{useState,useEffect} from 'react'
 import { useParams,useNavigate,Link } from 'react-router-dom'
 import { useUserAuth } from '../contexts/UserContext'
-import { useCartContext} from '../contexts/CartContext'
+
+import Modal from '../components/AddItemModal'
+import '../styles/Modal.css'
+import '../styles/App.css'
+
 
 
 const ViewOneWine = () => {
   let navigate = useNavigate();
   let Params = useParams()
   const [Productlist,setProductlist]=useState([])
-  let {AddToCart,Cart}=useCartContext()
+  let PROD={}
+ 
+
+  const[OpenModal,setOpenModal]=useState(false)
   let Allproducts=[]
   
   let {IsLoggedIn,UserData}=useUserAuth()
@@ -22,22 +29,17 @@ const ViewOneWine = () => {
     
     }
 
-   
-    const AddToCartHandler=(product)=>{
-      if (IsLoggedIn){
-          let item=Cart.find((item)=>item._id===product._id)
 
-          if(item){
-            alert("Item already in cart")
-            return
-          }
+    const showModal=()=>{
+      setOpenModal(prev=>!prev)
 
-          AddToCart(product)
-          alert(" new item added to cart")
-         
-      }
     }
 
+    
+    
+
+   
+    
 
     useEffect(()=>{
       setTimeout(()=>{
@@ -55,6 +57,7 @@ const ViewOneWine = () => {
       
       
      if(product.productType==="wines"&&product._id===Params.id){
+        PROD=product
        return <div className="wine-card" key={product._id}>
             <img src={product.image==="NOIMG"?"No image available":product.image} className="card-img-top" alt="..."/>
             <div className="card-body">
@@ -63,9 +66,7 @@ const ViewOneWine = () => {
               <p>price:${product.price}</p>
               <p> In stock:{product.quantity}</p>
               
-              <button onClick={()=>AddToCartHandler(product)}>Add to cart</button>
-              
-               
+              <button onClick={showModal}>Add to cart</button>
             </div>
         </div>
      }
@@ -74,9 +75,23 @@ const ViewOneWine = () => {
 
   return (
     <div>
+
+      {OpenModal && 
+    
+      <div className='overlay'>
+          <div id="ModalSection">
+            <Modal  setOpenModal={setOpenModal} OpenModal={OpenModal} item={PROD}/>
+          </div>
+       </div>
        
+       }
+
+
         <h1>product details</h1>
         {Wine}
+
+
+        
 
         {!IsLoggedIn?<p>Please <Link to="/login">login</Link> to add items to cart</p>:""}
         <button onClick={() => navigate(-1)}>Back</button>

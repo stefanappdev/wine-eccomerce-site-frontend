@@ -4,7 +4,7 @@ import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import LoginPage from './pages/LoginPage';
 import AboutPage from './pages/AboutPage';
-import Profile from './pages/Profile';
+
 import RequireAuth from './pages/RequireAuth';
 import { UserAuthProvider} from './contexts/UserContext';
 import ViewAllWines from "./pages/ViewAllWines";
@@ -14,6 +14,7 @@ import ViewAllBeers from './pages/ViewAllBeers';
 import ViewOneBeer from './pages/ViewOneBeer';
 import Checkout from './pages/Checkout';
 import { CartContextProvider } from './contexts/CartContext';
+import Logout from './pages/Logout';
 
 export default function App() {
     return (
@@ -34,7 +35,7 @@ export default function App() {
                         
                         <Route path="/users">
 
-                            <Route path=":id/home" element={<RequireAuth><Profile/></RequireAuth>}/>
+                            
                             <Route path=":id/checkout" element={<RequireAuth><Checkout/></RequireAuth>}/>
                         </Route>
 
@@ -51,6 +52,8 @@ export default function App() {
                             
                             
                         </Route>
+
+                        <Route path="/logout" element={<Logout />} />
 
 
 

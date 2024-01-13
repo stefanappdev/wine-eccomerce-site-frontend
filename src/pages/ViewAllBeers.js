@@ -57,8 +57,6 @@ const ViewAllBeers = () => {
     <div id="beers-page">
    
 
-    <h1>Browse through our collection of the finest beers in the World!</h1>
-
       {beers}
 
     </div>

@@ -9,13 +9,12 @@ const CartContextProvider=({children})=>{
     //total cost of all items in cart
     const [Total,setTotal]=useState(0);
 
-     //array with total cost of each item in cart
-  const [TotalsArr,setTotalsArr]=useState([])
+  
 
     const AddToCart=(product)=>{
         
         setCart([...Cart,product])
-        setTotalsArr([...TotalsArr,{id:product._id,itemTotalcost:product.price}])
+        
 
     }
 
@@ -27,7 +26,7 @@ const CartContextProvider=({children})=>{
     
     const ClearCart=()=>{
         setCart([])
-        setTotalsArr([])
+        
     }
 
     const RemoveFromCart=(id)=>{
@@ -38,7 +37,7 @@ const CartContextProvider=({children})=>{
     }
 
     return <CartContext.Provider value={{Cart,Total,setTotal,RemoveFromCart,
-        TotalsArr,setTotalsArr,AddToCart,ClearCart,UpdateItem}}>
+        AddToCart,ClearCart,UpdateItem}}>
         {children}
     </CartContext.Provider>
     

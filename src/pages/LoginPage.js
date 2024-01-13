@@ -73,7 +73,7 @@ const LoginPage=()=>{
             setTimeout(()=>{
 
             //console.log("user found")
-            navigate(`/users/${target._id}/home`)
+            navigate(`/`)
             },2000)
             
         }else{

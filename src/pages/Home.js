@@ -2,7 +2,7 @@ import React from "react";
 import { useUserAuth } from "../contexts/UserContext";
 import { Link } from "react-router-dom";
 import '../styles/home.css'
-import '../styles/dropdown.css'
+
 
 const Home = () => {
     let {IsLoggedIn,WhoIsLoggedIn} = useUserAuth();
@@ -14,10 +14,16 @@ const Home = () => {
             <div id="main-content">
 
                     <h1 id="site-title">
-                    <em>Welcome to In HighSpirits🍷</em>
+                    <em>HighSpirits</em>
                     </h1>
 
-                    <h5>{IsLoggedIn?`logged in as ${WhoIsLoggedIn}`:"not logged in"}</h5>
+                    {!IsLoggedIn?
+                    
+                 <p  id="greeting-msg">Not logged in,  
+                
+                    <Link to="/login">  <strong> Login</strong></Link> or <Link to="/signup"><strong>Signup</strong></Link> to get started  
+                
+                    </p> :""}
 
                     
 
@@ -30,12 +36,8 @@ const Home = () => {
 
 
 
-                <br/>
-               {!IsLoggedIn? <strong> <p id="greeting-msg"> 
                 
-                <Link to="/login">Login</Link> or <Link to="/signup">Signup</Link> to get started  
                 
-                </p> </strong>:""}
                 
 
 

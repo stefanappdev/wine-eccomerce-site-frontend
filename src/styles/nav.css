@@ -1,7 +1,7 @@
 
-@media screen and (min-width:350px) and (max-width:768px) {
+@media screen and (min-width:300px) and (max-width:768px) {
  
-    #shopping-cart-icon{
+  #shopping-cart-icon{
         width: 30px;
         height: 30px;
         cursor: pointer;
@@ -16,7 +16,7 @@
         align-self: flex-end;
     }
     
-    #trolley-counter{
+    #cart-counter{
         border-radius: 50%;
         border-width:2px ;
         height: 20px;
@@ -26,6 +26,12 @@
         color:white;
         
     }
+
+    #username{
+        color: antiquewhite;
+        font-weight: bolder;
+        font-size: 15px;
+    }
     
     
     #app-navbar{
@@ -33,6 +39,7 @@
         justify-content: row;
         align-items: center;
         width: 110%;
+        height:100px;
         background-color: #0752AD;
     
     }
@@ -42,10 +49,23 @@
         margin-left:50px;
         cursor: pointer;
     }
-    
-    .app-navlink>p{
+    .app-navlink>h1{
         color:whitesmoke;
         font-weight: bold;
+        margin-left: 20px;
     }
+
+    
+    .app-navlink p{
+        color:black;
+        font-weight: bold;
+    }
+
+    .logout-login-btn p{
+        color:whitesmoke;
+    }
+
+
+    
 }
 
