@@ -31,6 +31,11 @@ const ViewOneWine = () => {
 
 
     const showModal=()=>{
+      if (!IsLoggedIn){
+        alert("Please login to add items to cart")
+        navigate("/login")
+        return
+      }
       setOpenModal(prev=>!prev)
 
     }
@@ -93,7 +98,7 @@ const ViewOneWine = () => {
 
         
 
-        {!IsLoggedIn?<p>Please <Link to="/login">login</Link> to add items to cart</p>:""}
+        
         <button onClick={() => navigate(-1)}>Back</button>
       </div>
   )

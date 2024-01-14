@@ -25,9 +25,9 @@ export default function App() {
           
                 
                 <Router>
-                    <Navbar />
+                  <Navbar />
                     <Routes>
-                        
+                          
                         <Route path="/" element={<Home />} />
                         <Route path="/login" element={<LoginPage />} />   
                         <Route path="/about" element={<AboutPage />} />  

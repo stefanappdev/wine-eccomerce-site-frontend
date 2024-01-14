@@ -1,7 +1,6 @@
 import React from "react";
 import { useState } from 'react'
 import '../styles/Modal.css'
-import { set } from "react-hook-form";
 
 
 
@@ -41,15 +40,15 @@ return (
         <div>
         {costbreakdown}
         </div>
-        
+          {clicked&&<p>Your total is : ${Total}</p>}
         <div>
-        <button onClick={CheckoutUser}>Checkout</button>
+        <button onClick={CheckoutUser}>Checkout 🛒</button>
         <button onClick={CloseModal}>Close</button>
         </div>
        
 
        {clicked===false?<button onClick={CalculateTotal}>Calculate Total</button>:""}
-            <p>Your total is : ${Total}</p>
+        
 
             {msg!==""?<p>{msg}</p>:<p> </p>}
     

@@ -28,6 +28,10 @@ const ViewOneBeer = () => {
 
 
     const showModal=()=>{
+      if (!IsLoggedIn){
+        alert("Please login to add items to cart")
+        navigate("/login")
+      }
       setOpenModal(prev=>!prev)
 
     }
@@ -86,7 +90,7 @@ const ViewOneBeer = () => {
        
         <h1>product details</h1>
         {Beer} 
-        {!IsLoggedIn?<p>Please <Link to="/login">login</Link> to add items to cart</p>:""}
+        
 
         <button onClick={() => navigate(-1)}>Back</button>
       </div>

@@ -12,7 +12,7 @@ function Logout() {
 
 
   return (
-    <div>
+    <div className='App-page'>
         <h1>Logout page</h1>
 
 

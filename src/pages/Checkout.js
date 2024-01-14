@@ -5,6 +5,7 @@ import CartItem from '../components/CartItem'
 import "../components/CheckoutModal.js"
 import "../styles/checkout.css"
 import "../styles/Modal.css"
+import "../styles/App.css"
 import CheckoutModal from '../components/CheckoutModal.js'
 
 function Checkout() {
@@ -69,9 +70,9 @@ function Checkout() {
   
 
   return (
-   <div id="checkout-page">
+   <div id="checkout-page" className='App-page'>
        
-      {OpenModal && <div className='overlay'>
+      {OpenModal && <div  className='overlay'>
 
           <div id="ModalSection">
 
@@ -83,14 +84,14 @@ function Checkout() {
         
           <h1 id="page-header">Checkout Page</h1>
           
-          <p id="cart-amount">items in cart:{cartamt}</p>
+          <h2 id="cart-amount">Items in cart: {cartamt}</h2>
           <div>{items}</div>
           
           
           <div id="checkout-buttons">
-              <button onClick={Clear}>Clear Cart</button>
-
-              <button onClick={showModal}>Confirm</button>
+              <button id ="clear-cart" className='close-cancel-btn' onClick={Clear}>Clear Cart</button>
+              <button id="add-more" onClick={()=>navigate("/products")}>Add more Items</button>
+              <button id="confirm-order" onClick={showModal}>Confirm</button>
           </div>
          
 

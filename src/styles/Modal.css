@@ -1,4 +1,4 @@
-/*styles for AddCartmodal */
+
 *{
     margin: 0;
     padding: 0;
@@ -38,48 +38,40 @@
     justify-content: center;
 }
 
-#Modal h1{
+.Modal h1{
     text-align: center;
     margin-top: 10px;
    
 }
 
-/*.modal-btn{
-    cursor: pointer;
-    color: white;
-    border: none;
-    width: 100px;
-    height: 30px;
-    border-radius: 5px;
 
-}*/
-
-#purchase-details{
+/*styles for AddCartmodal */
+#AddItemModal #purchase-details{
     display: flex;
     flex-direction: column;
     padding-left:10px ;
 }
 
-#purchase-details>div{
+#AddItemModal #purchase-details>div{
     margin-top: 20px;
 }
 
-#total{
+#AddItemModal #total{
     font-weight: bold;
     font-size: 20px;
 }
 
-#modal-btns{
+#AddItemModal #modal-btns{
     display: flex;
     margin-top: 20px;
     gap: 20px;
 }
 
-#close-modal{
+#AddItemModal #close-modal{
     background-color: rgb(252, 9, 9);
 }
 
-#add-to-cart{
+#AddItemModal #add-to-cart{
     background-color: #114cf0;
 }
 
@@ -102,6 +94,8 @@
     border: none;
 
 }
+
+
 
 .Itemcounter{
     display: inline-flex;

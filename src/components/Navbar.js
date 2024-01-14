@@ -72,6 +72,23 @@ const Navbar = ()=>{
             </Link> 
 
 
+            {!IsLoggedIn?<Link  className="app-navlink" to="/login">   
+              <MenuItem onClick={handleClose}>     
+                     <p >Login</p>
+                 
+               </MenuItem>
+            </Link>:
+            
+            <Link className="app-navlink"  to="/logout">   
+              <MenuItem onClick={handleClose}>     
+                     <p >Logout</p>
+                 
+               </MenuItem>
+            </Link>
+            
+            } 
+
+
 
             
 
@@ -98,7 +115,7 @@ const Navbar = ()=>{
             {IsLoggedIn?  
                  
                     
-                 <Button className="logout-login-btn">
+                 <Button id="logout-link" className="logout-login-btn">
                   <Link className="app-navlink" to="/logout">
                    <p>Logout</p>
                   </Link>
@@ -106,7 +123,7 @@ const Navbar = ()=>{
 
               :
 
-                 <Button className="logout-login-btn">
+                 <Button id="login-link" className="logout-login-btn">
                   <Link className="app-navlink"  to="/login">  
                    <p>Login</p>
                   </Link>

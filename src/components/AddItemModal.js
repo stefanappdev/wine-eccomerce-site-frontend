@@ -65,7 +65,7 @@ const AddItemModal = ({setOpenModal,OpenModal,item}) => {
         }
 
     return (
-        <div className="Modal" >
+        <div className="Modal" id="AddItemModal">
          <div id='purchase-details'>
                     <h1>Details of purchase</h1>
                 <div>Name: <strong>{item.productName}</strong></div>
@@ -82,7 +82,7 @@ const AddItemModal = ({setOpenModal,OpenModal,item}) => {
                 
         </div>
         <div id="modal-btns">
-                <button className="modal-btn" id="close-modal" onClick={() => setOpenModal(false)}>Close</button>
+                <button className="modal-btn close-cancel-btn" id="close-modal" onClick={() => setOpenModal(false)}>Close</button>
                 <button className="modal-btn" id="add-to-cart" onClick={() => AddToCartHandler(item)}>Add to cart</button>
         </div>
         
