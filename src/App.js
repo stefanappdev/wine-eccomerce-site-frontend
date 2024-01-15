@@ -15,6 +15,7 @@ import ViewOneBeer from './pages/ViewOneBeer';
 import Checkout from './pages/Checkout';
 import { CartContextProvider } from './contexts/CartContext';
 import Logout from './pages/Logout';
+import Signup from './pages/Signup';
 
 export default function App() {
     return (
@@ -25,11 +26,15 @@ export default function App() {
           
                 
                 <Router>
-                  <Navbar />
+                 <div>
+                     <Navbar />
+                  </div>   
+                 
                     <Routes>
                           
                         <Route path="/" element={<Home />} />
-                        <Route path="/login" element={<LoginPage />} />   
+                        <Route path="/login" element={<LoginPage />} />  
+                        <Route path="/signup" element={<Signup />} /> 
                         <Route path="/about" element={<AboutPage />} />  
                         
                         

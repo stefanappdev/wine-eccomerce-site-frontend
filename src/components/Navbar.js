@@ -54,6 +54,24 @@ const Navbar = ()=>{
             </Link> 
 
 
+            <Link className="app-navlink" id="cart-link-mobile"  to={IsLoggedIn?`/users/${UserData._id}/checkout`:"/login"}>  
+                 
+              <MenuItem onClick={handleClose}>
+    
+                  <div id="cart-info-mobile">
+                       
+                      
+                       <p>Cart</p>
+                       
+                      <div id="cart-counter">{Cart.length}</div>
+                      
+                  </div>
+             </MenuItem>
+              </Link>
+            
+            
+
+
            
 
           <Link className="app-navlink" to="/products">  
@@ -71,15 +89,22 @@ const Navbar = ()=>{
                </MenuItem>
             </Link> 
 
+            {!IsLoggedIn?<Link className="app-navlink"  to="/signup">   
+              <MenuItem onClick={handleClose}>     
+                     <p >Signup</p>
+                 
+               </MenuItem>
+            </Link>:""}
 
-            {!IsLoggedIn?<Link  className="app-navlink" to="/login">   
+
+            {!IsLoggedIn?<Link  className="app-navlink" id="login-link-mobile" to="/login">   
               <MenuItem onClick={handleClose}>     
                      <p >Login</p>
                  
                </MenuItem>
             </Link>:
             
-            <Link className="app-navlink"  to="/logout">   
+            <Link className="app-navlink" id="logout-link-mobile" to="/logout">   
               <MenuItem onClick={handleClose}>     
                      <p >Logout</p>
                  
@@ -97,25 +122,25 @@ const Navbar = ()=>{
 
 
             
-           {IsLoggedIn&&<h2 id="username"> Hi {WhoIsLoggedIn}</h2>}
-
-            <Link className="app-navlink" id="navbar-logo" to="/">
-                  <h1>HighSpirits🥂</h1>
-            </Link>
-
-
+         
+            {IsLoggedIn&&<h2 id="username"> Hi {WhoIsLoggedIn}</h2>}
 
             <Link className="app-navlink"  to={IsLoggedIn?`/users/${UserData._id}/checkout`:"/login"}>  
-                   <img id="shopping-cart-icon" src="./images/shopping-cart.png" alt="shopping cart"/>
-                  </Link>
+                 
+             
+    
+                  <div id="cart-info-desktop">
+                        <p>Cart</p>
+                      <div id="cart-counter">{Cart.length}</div>
+                  </div>
             
-            <div id="cart-counter">{Cart.length}</div>
-
+              </Link>
+            
 
             {IsLoggedIn?  
                  
                     
-                 <Button id="logout-link" className="logout-login-btn">
+                 <Button id="logout-link-desktop" className="logout-login-btn">
                   <Link className="app-navlink" to="/logout">
                    <p>Logout</p>
                   </Link>
@@ -123,12 +148,23 @@ const Navbar = ()=>{
 
               :
 
-                 <Button id="login-link" className="logout-login-btn">
+                 <Button id="login-link-desktop" className="logout-login-btn">
                   <Link className="app-navlink"  to="/login">  
                    <p>Login</p>
                   </Link>
                  </Button>
               }
+
+      
+    
+         
+
+      
+      
+       <h1 id="navbar-logo">HighSpirits🥂</h1>
+
+
+
 
 
             

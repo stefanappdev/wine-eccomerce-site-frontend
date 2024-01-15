@@ -6,7 +6,7 @@
 
 
 
-@media screen and (min-width:350px) and (max-width:768px) {
+@media screen and (min-width:300px) and (max-width:768px) {
 
     
 #checkout-page{
@@ -17,7 +17,10 @@
     
 }
 
-  
+  #cart-info{
+    display:inline-flex;
+    gap:5px;
+  }
     #empty-cart-options{
         display: flex;
         justify-content: center;
