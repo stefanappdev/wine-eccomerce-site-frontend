@@ -1,15 +1,25 @@
 import React from "react";
 import { useState } from 'react'
 import '../styles/Modal.css'
+import{useCartContext} from '../contexts/CartContext'
 
 
 
-const CheckoutModal = ({OpenModal,setOpenModal,Cart,Total,setTotal}) => {
+const CheckoutModal = ({OpenModal,setOpenModal,Total,setTotal}) => {
 
     const [msg,setmsg]=useState("")
     const [clicked,setclicked]=useState(false)
+
+    const{Cart,setCart,ClearCart}=useCartContext()
+
     const CheckoutUser=()=>{
+       
        setmsg("Thank you for shopping with us")
+
+       setTimeout(()=>{
+         ClearCart()
+       },2000)
+       
     }
 
 
@@ -42,7 +52,7 @@ return (
         </div>
           {clicked&&<p>Your total is : ${Total}</p>}
         <div>
-        <button onClick={CheckoutUser}>Checkout 🛒</button>
+        {clicked&&<button onClick={CheckoutUser}>Checkout 🛒</button>}
         <button onClick={CloseModal}>Close</button>
         </div>
        

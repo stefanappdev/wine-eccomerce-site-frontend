@@ -7,11 +7,12 @@ import EditModal from '../components/EditModal'
 
 
 
-const CartItem=({Id,item,RemoveFromCart,cartamt,setCartamt})=>{
-
+const CartItem=({Id,item,RemoveFromCart})=>{
+   let {Cart}=useCartContext()
    const{Total,setTotal}=useCartContext()
    const[OpenModal,setOpenModal]=useState(false)
    const [ShouldUpdate,setShouldUpdate]=useState(false)
+   const [cartamt,setCartamt]=useState(Cart.length)
 
    
 

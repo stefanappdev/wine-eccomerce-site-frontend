@@ -1,0 +1,121 @@
+
+@media screen and (min-width:300px) and (max-width:700px){
+
+
+.page{
+  background-color: rgb(224, 218, 218);
+  height: 100vh;
+}    
+
+.errors{
+    color: red;
+}
+
+h1{
+    text-align: center;
+}
+
+.form-buttons{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+#password{
+    margin-right:20px;
+}
+
+
+
+button{
+    cursor: pointer;
+}
+
+button:nth-of-type(2){
+   margin-left: 20px;
+
+}
+
+
+.Forminput{
+    min-width: 200px;
+    height: 30px;
+ 
+}
+
+.form{
+padding-left: 5px;
+margin-top: 50px;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+}
+
+}
+
+@media screen and (min-width:701px) and (max-width:1440px){
+
+    .page{
+        padding-top: 20px;
+        background-color: rgb(224, 218, 218);
+        min-height: 100vh;
+      }    
+      
+      .errors{
+          color: red;
+      }
+      
+      h1{
+          text-align: center;
+          margin-bottom: 50px;
+          
+      }
+
+      label{
+        font-weight: bold;
+      }
+
+
+
+      .form-buttons{
+          margin-top: 50px;
+          display: flex;
+          justify-content: center;
+      }
+      
+      
+     
+    
+      
+      button{
+          cursor: pointer;
+      }
+      
+      button:nth-of-type(2){
+         margin-left: 50px;
+      
+      }
+
+      .Forminput{
+        min-width: 200px;
+        height: 30px;
+     
+    }
+    
+      
+      .form{
+      padding-left: 50px;
+      margin-top: 100px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      justify-content: center;
+      }
+      
+
+
+
+
+}

@@ -24,6 +24,8 @@ const Navbar = ()=>{
       
         return (
           <div id="app-navbar">
+
+            
             <Button
               id="basic-button"
               aria-controls={open ? 'basic-menu' : undefined}
@@ -123,7 +125,7 @@ const Navbar = ()=>{
 
             
          
-            {IsLoggedIn&&<h2 id="username"> Hi {WhoIsLoggedIn}</h2>}
+            {IsLoggedIn&&<h2 id="nav-username"> Hi {WhoIsLoggedIn}</h2>}
 
             <Link className="app-navlink"  to={IsLoggedIn?`/users/${UserData._id}/checkout`:"/login"}>  
                  

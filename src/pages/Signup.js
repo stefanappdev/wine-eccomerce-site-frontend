@@ -1,24 +1,63 @@
-import React,{useState} from "react"
+import React,{useState,useEffect} from "react"
+import { useNavigate } from "react-router-dom";
+import "../styles/Login-Signup.css"
+import * as yup from "yup"
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+
+
+const schema = yup.object().shape({
+
+	username: yup.string().required(),
+	email: yup.string().email().required(),
+	password: yup.string().min(8).max(30).required(),
+	
+})
+
+
 
 const Signup=()=>{
 
+
+let navigate=useNavigate()
 	
-	
-	const[formdata,setformdata]=useState({
-        
-
-		password:"",
-		email:"",
-	
-
-		})
+	const [UserData,setUserData]=useState([])
 
 
-	const handleChange=(e)=>{
-    setformdata({...formdata,[e.target.name]:e.target.value});
-  }
+	const {register,handleSubmit,formState:{errors}}=useForm({
+		resolver:yupResolver(schema)
+	})
 
-	const HandleSubmit=()=>{
+
+	const fetchUsers=async()=>{
+
+		///function to fetch users from database
+			let resp= await fetch("http://localhost:65000/users")
+			let users= await resp.json();
+			setUserData(users)
+		  }
+  
+		  useEffect(()=>{
+		  setTimeout(()=>{
+  
+		  fetchUsers();
+  
+		  },1000)
+		  },[])  
+
+
+	const SubmitUser=(formdata)=>{
+
+		let Users=[...UserData]
+
+		let exists=Users.find(user=> user.email===formdata.email)
+
+		if (exists){
+			alert("user already exists")
+			return
+		}
+
+		//function to submit new users to database
 	fetch("http://localhost:65000/users",
 		{
 			method:"POST",
@@ -34,6 +73,13 @@ const Signup=()=>{
 		console.log(err)
 	})
 
+
+	alert("User created successfully,redirecting to login page")
+	setTimeout(()=>{
+		navigate("/login")
+	},2000)
+	
+
 	}
 
 
@@ -41,33 +87,47 @@ const Signup=()=>{
 
 	return(
 
-    <div> 
+    <div className="page"> 
 
-    <h1>Signup</h1>
-
-    
-	<form onSubmit={HandleSubmit}>
+		<h1>Signup Page</h1>
 
 
+	<form className="form" onSubmit={handleSubmit(SubmitUser)}>
+ 		
+
+
+		<label for ="email">
+			email:<input type="text" className="Forminput" {...register("email")} placeholder='email' id="email" name="email"/>
+		</label>
+
+		<p className="errors">{errors.email?.message}</p>
+		
+		<br/>
 			
 		<label>
-			email:<input type="text" onChange={handleChange} placeholder='email' value={formdata.email} name="email"/>
+			username:<input className="Forminput" type="text" {...register("username")} placeholder='username' id="Signup-username" name="username"/>
 		</label>
+
+		<p className="errors">{errors.username?.message}</p>
 		
 		<br/>
 
 		<label>
-			password:<input type="password" onChange={handleChange} placeholder='password' value={formdata.password} name="password"/>
+			password:<input  className="Forminput" type="password" {...register("password")} placeholder='password' id="password" name="password"/>
 
 		</label>
+
+		<p className="errors">{errors.password?.message}</p>
 
 
 
 
 		
-
-		<button>Submit</button>
-
+		<div className="form-buttons">
+			<button onClick={() => navigate("/")}>back</button>
+			<button>Submit</button>
+		</div>
+		
 	</form>
 
     </div>   

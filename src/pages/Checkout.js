@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useCartContext } from '../contexts/CartContext'
+import { useUserAuth } from '../contexts/UserContext'
 import { useNavigate } from 'react-router-dom'
 import CartItem from '../components/CartItem'
 import "../components/CheckoutModal.js"
@@ -13,15 +14,16 @@ function Checkout() {
   let {Cart,RemoveFromCart,ClearCart,Total,setTotal}=useCartContext()
 
  
-  
-  let [cartamt,setCartamt]=useState(Cart.length)
+  let {isLoggedIn}=useUserAuth()
+
   const [OpenModal,setOpenModal]=useState(false)
 
   let navigate = useNavigate();
- 
+
+
   
  
-  if (cartamt===0){
+  if (Cart.length===0){
     setTotal(0)
     return (<div id="empty-cart-options">
       <h1 id="empty-cart-msg">Cart is Empty</h1>
@@ -36,7 +38,6 @@ function Checkout() {
   const Clear=()=>{
 
     ClearCart();
-    setCartamt(0)
     setTotal(0)
   
     alert("Cart Cleared")
@@ -56,8 +57,7 @@ function Checkout() {
             Id={item._id} 
             item={item}  
             RemoveFromCart={RemoveFromCart}
-            cartamt={cartamt}
-            setCartamt={setCartamt} 
+         
             
           
             />
@@ -77,14 +77,14 @@ function Checkout() {
           <div id="ModalSection">
 
            <CheckoutModal OpenModal={OpenModal} setOpenModal={setOpenModal} 
-                    setTotal={setTotal} Total={Total} Cart={Cart}/>
+                    setTotal={setTotal} Total={Total}/>
                     
             </div>
           </div>}
         
           <h1 id="page-header">Checkout Page</h1>
           
-          <h2 id="cart-amount">Items in cart: {cartamt}</h2>
+          <h2 id="cart-amount">Items in cart: {Cart.length}</h2>
           <div>{items}</div>
           
           
