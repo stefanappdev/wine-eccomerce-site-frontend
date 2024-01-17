@@ -1,6 +1,6 @@
 import React,{useState,useEffect} from 'react'
 import { Link } from 'react-router-dom'
-import "../styles/products.css"
+import "../styles/Allproducts.css"
 
 
 
@@ -38,16 +38,21 @@ const ViewAllBeers = () => {
       
       
      if(product.productType==="beers"){
-       return <div className="beer-card" key={product._id}>
-            <img src={product.image==="NOIMG"?"No image available":product.image} className="card-img-top" alt="..."/>
-            <div className="card-body">
-              <h5 className="card-title">{product.productName}</h5>
-              <p className="card-text">description:{product.description!==""?product.description:"No description available"}</p>
-           
-              <Link to={`/products/beers/${product._id}`} className="#">more info</Link>
-               
-            </div>
-        </div>
+       
+       
+       return <Link to={`/products/beers/${product._id}`} className="card-link">
+              
+              
+
+       <div className="product-card"  key={product._id}>
+     <img src={product.image==="NOIMG"?"No image available":product.image} className="card-img-top"  alt={`${product.productName}`}/>
+     <div className="card-body">
+       <h5 className="card-title">{product.productName}</h5>
+       
+             </div>
+          </div>
+       
+       </Link>
      }
     
   })
@@ -57,7 +62,7 @@ const ViewAllBeers = () => {
     <div id="beers-page">
    
 
-      {beers}
+   <div className="display-container">{beers}</div>
 
     </div>
    

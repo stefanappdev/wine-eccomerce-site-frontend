@@ -57,8 +57,7 @@ const LoginPage=()=>{
 
 
     const HandleLogin=(user)=>{
-       console.log(user)
-       
+      
   
        
         
@@ -67,7 +66,7 @@ const LoginPage=()=>{
            UC.setIsLoggedIn(true)
             UC.setUserData(target)
             UC.setWhoIsLoggedIn(target.username)
-            alert("login successful")
+            alert("login successful,redirecting to homepage")
             
             setTimeout(()=>{
             navigate(`/`)
@@ -91,7 +90,7 @@ const LoginPage=()=>{
 
           if(target.password!==FormData.password){
             alert("user not found,please recheck username and password")
-            console.log(target)
+           
             return
           }else{
 

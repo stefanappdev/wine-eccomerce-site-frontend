@@ -5,6 +5,7 @@ import { useUserAuth } from '../contexts/UserContext'
 import Modal from '../components/AddItemModal'
 import '../styles/Modal.css'
 import '../styles/App.css'
+import "../styles/Singleproduct.css"
 
 
 
@@ -61,46 +62,47 @@ const ViewOneWine = () => {
    
       
       
-     if(product.productType==="wines"&&product._id===Params.id){
+      if(product.productType==="wines"&&product._id===Params.id){
         PROD=product
-       return <div className="wine-card" key={product._id}>
-            <img src={product.image==="NOIMG"?"No image available":product.image} className="card-img-top" alt="..."/>
-            <div className="card-body">
-              <h5 className="card-title">{product.productName}</h5>
-              <p className="card-text">description:{product.description!==""?product.description:"No description available"}</p>
-              <p>price:${product.price}</p>
-              <p> In stock:{product.quantity}</p>
+         return <div class="product-card-single" key={product._id}>
+              <img src={product.image==="NOIMG"?"No image available":product.image} className="card-img-top-single" alt={`${product.productName}`}/>
+              <div className="card-body-single">
+                <h4 className="card-title-single ">{product.productName}</h4>
+                <p className="card-text-single">{product.description!==""?"description:"+product.description:""}</p>
+                <p className='important-details'>price:${product.price}</p>
+                <p className='important-details'> In stock:{product.quantity}</p>
+               <br/>
+                <button  onClick={showModal}>Add to cart </button>
+                
+                 
+              </div>
+  
               
-              <button onClick={showModal}>Add to cart</button>
-            </div>
-        </div>
+          </div>
      }
     
   })
 
   return (
-    <div>
+    <div className='product-details'>
 
-      {OpenModal && 
+    {OpenModal && 
+        
+        <div className='overlay'>
+            <div id="ModalSection">
+              <Modal  setOpenModal={setOpenModal} OpenModal={OpenModal} item={PROD}/>
+            </div>
+         </div>
+         
+         }
     
-      <div className='overlay'>
-          <div id="ModalSection">
-            <Modal  setOpenModal={setOpenModal} OpenModal={OpenModal} item={PROD}/>
+           
+            <h1>product details</h1>
+            <div class="display-container-single" >{Wine} </div>
+    
+    
+            <button className='back-btn' onClick={() => navigate(-1)}>Back</button>
           </div>
-       </div>
-       
-       }
-
-
-        <h1>product details</h1>
-        {Wine}
-
-
-        
-
-        
-        <button onClick={() => navigate(-1)}>Back</button>
-      </div>
   )
 }
 

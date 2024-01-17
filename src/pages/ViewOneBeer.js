@@ -5,6 +5,8 @@ import { useUserAuth } from '../contexts/UserContext'
 import Modal from '../components/AddItemModal'
 import '../styles/Modal.css'
 import '../styles/App.css'
+import "../styles/Singleproduct.css"
+
 
 
 const ViewOneBeer = () => {
@@ -57,25 +59,27 @@ const ViewOneBeer = () => {
       
      if(product.productType==="beers"&&product._id===Params.id){
       PROD=product
-       return <div className="beer-card" key={product._id}>
-            <img src={product.image==="NOIMG"?"No image available":product.image} className="card-img-top" alt="..."/>
-            <div className="card-body">
-              <h5 className="card-title">{product.productName}</h5>
-              <p className="card-text">description:{product.description!==""?product.description:"No description available"}</p>
-              <p>price:${product.price}</p>
-              <p> In stock:{product.quantity}</p>
-             
+       return <div class="product-card-single" key={product._id}>
+            <img src={product.image==="NOIMG"?"No image available":product.image} className="card-img-top-single"  alt={`${product.productName}`}/>
+            <div className="card-body-single">
+              <h4 className="card-title-single ">{product.productName}</h4>
+              <p className="card-text-single">{product.description!==""?"description:"+product.description:""}</p>
+              <p className='important-details'>price:${product.price}</p>
+              <p className='important-details'> In stock:{product.quantity}</p>
+             <br/>
               <button onClick={showModal}>Add to cart </button>
               
                
             </div>
+
+            
         </div>
      }
     
   })
 
   return (
-    <div>
+    <div className='product-details'>
 
 {OpenModal && 
     
@@ -89,10 +93,10 @@ const ViewOneBeer = () => {
 
        
         <h1>product details</h1>
-        {Beer} 
-        
+        <div class="display-container-single" >{Beer} </div>
 
-        <button onClick={() => navigate(-1)}>Back</button>
+
+        <button className='back-btn' onClick={() => navigate(-1)}>Back</button>
       </div>
   )
 }

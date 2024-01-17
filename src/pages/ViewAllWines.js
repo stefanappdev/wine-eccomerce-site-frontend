@@ -1,5 +1,5 @@
 import React,{useState,useEffect} from 'react'
-import "../styles/products.css"
+import "../styles/Allproducts.css"
 import { Link } from 'react-router-dom'
 
 
@@ -38,15 +38,15 @@ const ViewAllWines = () => {
       
       
      if(product.productType==="wines"){
-       return <Link to={`/products/wines/${product._id}`} className="#">
+       return <Link to={`/products/wines/${product._id}`} className="card-link">
               
               
 
-              <div className="product-card" key={product._id}>
-            <img src={product.image==="NOIMG"?"No image available":product.image} className="card-img-top" alt="..."/>
+              <div className="product-card"  key={product._id}>
+            <img src={product.image==="NOIMG"?"No image available":product.image} className="card-img-top"  alt={`${product.productName}`}/>
             <div className="card-body">
               <h5 className="card-title">{product.productName}</h5>
-              <p className="card-text">description:{product.description!==""?product.description:"No description available"}</p>
+              
                     </div>
                  </div>
               
@@ -59,10 +59,10 @@ const ViewAllWines = () => {
 
 
   return (
-    <div id="wines-page">
+    <div className="wines-page">
   
 
-      {wines}
+      <div className="display-container">{wines}</div>
 
     </div>
    

@@ -1,0 +1,125 @@
+
+@media screen and (min-width:300px) and (max-width:700px) {
+    
+
+
+        .display-container-single{
+            width: 200px;
+            height: 380px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: rgb(161, 221, 221);
+            box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+            cursor: pointer;
+            margin-top: 50px;
+        }
+
+
+        .card-body-single{
+            padding: 20px ;
+        }
+
+
+        .card-title-single{
+            margin-bottom: 5px ;
+        }
+
+
+
+        .product-card-single>img{
+            width: 50%;
+            height: 50%;
+            border-radius: 50%;
+            margin-left: 45px;
+            
+            
+        }
+
+        .product-details{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+        }
+
+        .important-details{
+          font-weight: bold;
+          font-size: 20px;
+        }
+
+
+        .back-btn{
+            align-self: start;
+            margin-top: 50px;
+            margin-left: 50px;
+            
+        }
+
+    }
+
+
+    @media screen and (min-width:701px) and (max-width:1440px) {
+        
+
+        .display-container-single{
+            width: 200px;
+            height: 380px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: rgb(161, 221, 221);
+            box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+            cursor: pointer;
+            margin-top: 50px;
+        }
+
+
+        .card-body-single{
+            padding: 20px ;
+        }
+
+
+        .card-title-single{
+            margin-bottom: 5px ;
+        }
+
+
+
+        .product-card-single>img{
+            width: 50%;
+            height: 50%;
+            border-radius: 50%;
+            margin-left: 45px;
+            
+            
+        }
+
+
+
+        .product-details{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+        }
+
+        .important-details{
+          font-weight: bold;
+          font-size: 20px;
+        }
+
+
+        .back-btn{
+            align-self:center;
+            margin-top: 50px;
+            margin-right: 100px;
+            
+        }
+    }

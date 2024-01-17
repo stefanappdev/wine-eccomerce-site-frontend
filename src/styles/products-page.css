@@ -1,0 +1,90 @@
+
+@media screen and (min-width:300px) and (max-width:700px){
+    
+
+
+    #products-page>h1{
+        text-align: center;
+        margin-top: 10px;
+    }
+
+
+    #products-page{
+        padding-left:20px;
+        background-color: #FADBD8;
+        min-height:100vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #products-page>nav{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+    }
+
+    #products-page>nav>a{
+        text-decoration: none;
+        color: black;
+        cursor: pointer;
+        font-weight: 200;
+    }
+
+
+    #red-wine{
+        width: 100px;
+        height: 100px;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        border-radius: 50%;
+        align-self: center;
+    }
+
+}
+
+@media screen and (min-width:701px) and (max-width:1440px){
+
+    #products-page>h1{
+        text-align: center;
+        margin-top: 10px;
+    }
+
+
+    #products-page{
+        padding-left:20px;
+        background-color: #FADBD8;
+        min-height:100vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #products-page>nav{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+    }
+
+    #products-page>nav>a{
+        text-decoration: none;
+        color: black;
+        cursor: pointer;
+        font-weight: 200;
+    }
+
+
+    #red-wine{
+        width: 200px;
+        height: 200px;
+        margin-top: -40px;
+        margin-bottom: 20px;
+        border-radius: 50%;
+        align-self: center;
+    }
+
+
+
+
+}
+
