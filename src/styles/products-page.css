@@ -12,6 +12,7 @@
     #products-page{
         padding-left:20px;
         background-color: #FADBD8;
+        width: 100vw;
         min-height:100vh;
         display: flex;
         flex-direction: column;
@@ -28,7 +29,7 @@
         text-decoration: none;
         color: black;
         cursor: pointer;
-        font-weight: 200;
+        font-weight: 800;
     }
 
 
@@ -55,6 +56,7 @@
         padding-left:20px;
         background-color: #FADBD8;
         min-height:100vh;
+        width: 100vw;
         display: flex;
         flex-direction: column;
     }
@@ -70,7 +72,7 @@
         text-decoration: none;
         color: black;
         cursor: pointer;
-        font-weight: 200;
+        font-weight: 800;
     }
 
 

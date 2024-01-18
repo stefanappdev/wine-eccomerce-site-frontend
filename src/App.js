@@ -3,7 +3,7 @@ import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import LoginPage from './pages/LoginPage';
-import AboutPage from './pages/AboutPage';
+
 
 import RequireAuth from './pages/RequireAuth';
 import { UserAuthProvider} from './contexts/UserContext';
@@ -35,7 +35,7 @@ export default function App() {
                         <Route path="/" element={<Home />} />
                         <Route path="/login" element={<LoginPage />} />  
                         <Route path="/signup" element={<Signup />} /> 
-                        <Route path="/about" element={<AboutPage />} />  
+                        
                         
                         
                         <Route path="/users">

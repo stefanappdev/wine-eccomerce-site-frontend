@@ -84,13 +84,6 @@ const Navbar = ()=>{
                </MenuItem>  
                </Link> 
 
-            <Link className="app-navlink" to="/about">   
-              <MenuItem onClick={handleClose}>     
-                     <p >About Us</p>
-                 
-               </MenuItem>
-            </Link> 
-
             {!IsLoggedIn?<Link className="app-navlink"  to="/signup">   
               <MenuItem onClick={handleClose}>     
                      <p >Signup</p>

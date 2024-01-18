@@ -43,23 +43,33 @@ const CheckoutModal = ({OpenModal,setOpenModal,Total,setTotal}) => {
 
 return (
 
-<div className="Modal">
+<div className="Modal" id="checkout-modal">
         <h1>Finalizing your order</h1>
 
         <p>Here is a breakdown of your order</p>
+
+        <br/>
+
         <div>
         {costbreakdown}
         </div>
-          {clicked&&<p>Your total is : ${Total}</p>}
-        <div>
+
+      
+          <br/>
+        <div id="checkout-modal-buttons" >
         {clicked&&<button onClick={CheckoutUser}>Checkout 🛒</button>}
+
+        {clicked===false?<button onClick={CalculateTotal}>Calculate Total</button>:""}
+        
         <button onClick={CloseModal}>Close</button>
         </div>
+
+        <br/>
+           {clicked&&<p>Your total is : ${Total}</p>}
+
        
-
-       {clicked===false?<button onClick={CalculateTotal}>Calculate Total</button>:""}
         
-
+          <br/>
             {msg!==""?<p>{msg}</p>:<p> </p>}
     
 </div>

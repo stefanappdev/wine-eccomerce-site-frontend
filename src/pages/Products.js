@@ -15,7 +15,7 @@ function Products() {
         
 
       
-        <h1>Choose from our fine assortment of products</h1>
+        <h1><em>Choose from our fine assortment of products</em></h1>
         
         <img id="red-wine" src="./images/red-wine.jpg"/>
 

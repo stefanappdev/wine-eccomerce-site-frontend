@@ -2,6 +2,7 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import { useUserAuth, } from '../contexts/UserContext'
 import{ useCartContext } from '../contexts/CartContext'
+import '../styles/logout.css'
 
 function Logout() {
     const { setIsLoggedIn } = useUserAuth();
@@ -10,17 +11,23 @@ function Logout() {
     const HandleLogout = () => {
         setIsLoggedIn(false);
         ClearCart();
-        navigate('/login');
+        alert('you have logged out');
+
+        setTimeout(() => {
+
+            navigate('/login');
+        },2000)
+      
     }
 
 
   return (
-    <div className='App-page'>
+    <div id='logout-page'>
         <h1>Logout page</h1>
 
 
 
-        <button onClick={HandleLogout}>Logout</button>
+        <button id="logout-button" onClick={HandleLogout}>Logout</button>
         
         
         

@@ -52,7 +52,7 @@ function EditModal({ShouldUpdate,setShouldUpdate,item,setOpenModal,OpenModal}) {
 
 
   return (
-    <div className='Modal'>
+    <div className='Modal' id="EditItemModal">
         
         <h1>Edit Item</h1>
 
