@@ -32,7 +32,7 @@ let navigate=useNavigate()
 	const fetchUsers=async()=>{
 
 		///function to fetch users from database
-			let resp= await fetch("http://localhost:65000/users")
+			let resp= await fetch(`${process.env.WINE_API}/users`)
 			let users= await resp.json();
 			setUserData(users)
 		  }
@@ -58,7 +58,7 @@ let navigate=useNavigate()
 		}
 
 		//function to submit new users to database
-	fetch("http://localhost:65000/users",
+	fetch(`${process.env.REACT_APP_WINE_API}/users`,
 		{
 			method:"POST",
 			headers:{"Content-Type":'application/json'},

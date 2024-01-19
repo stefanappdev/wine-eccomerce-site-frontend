@@ -21,7 +21,9 @@ const ViewOneBeer = () => {
 
 
   const fetchProducts= async()=>{
-    let resp=await fetch(`http://localhost:65000/products/`)  
+    //function to fetch products from database
+
+    let resp=await fetch(`${process.env.REACT_APP_WINE_API}/products/`)  
     let result=await resp.json()
    // console.log(result)
     setProductlist(result)

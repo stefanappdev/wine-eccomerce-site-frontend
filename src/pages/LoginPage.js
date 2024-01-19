@@ -40,7 +40,7 @@ const LoginPage=()=>{
     const fetchUsers=async()=>{
 
       ///function to fetch users from database
-          let resp= await fetch("http://localhost:65000/users")
+          let resp= await fetch(`${process.env.REACT_APP_WINE_API}/users`)
           let users= await resp.json();
           setUserData(users)
         }
@@ -58,7 +58,7 @@ const LoginPage=()=>{
 
     const HandleLogin=(user)=>{
       
-  
+  //function to handle login of users
        
         
         if(user){
@@ -78,6 +78,7 @@ const LoginPage=()=>{
 
     const submitForm=(FormData)=>{
         
+//function to submit login 
 
         let Users=[...UserData]
        //console.log(Users)

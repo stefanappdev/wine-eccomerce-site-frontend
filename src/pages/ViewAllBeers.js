@@ -4,15 +4,15 @@ import "../styles/Allproducts.css"
 
 
 
-//shows all the beers in database
+
 const ViewAllBeers = () => {
- 
+ //shows all the beers in database
 
   const [Productlist,setProductlist]=useState([])
   let Allproducts=[]
  
   const fetchProducts= async()=>{
-    let resp=await fetch("http://localhost:65000/products")  
+    let resp=await fetch(`${process.env.REACT_APP_WINE_API}/products`)  
     let result=await resp.json()
     //console.log(result)
     setProductlist(result)
