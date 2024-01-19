@@ -5,23 +5,36 @@
 
         .display-container-single{
             width: 200px;
-            height: 380px;
+            height: 400px;
             border-radius: 10px;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            background-color: rgb(161, 221, 221);
+            background-color: rgb(234, 241, 241);
             box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
             cursor: pointer;
             margin-top: 50px;
         }
+
+      
 
 
         .card-body-single{
             padding: 20px ;
         }
 
+        .card-btn-single{
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+           
+           padding-left: 50px;
+           padding-right: 50px;
+           margin-bottom: 50px;
+
+
+        }
 
         .card-title-single{
             margin-bottom: 5px ;
@@ -67,13 +80,13 @@
 
         .display-container-single{
             width: 200px;
-            height: 380px;
+            height: 400px;
             border-radius: 10px;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            background-color: rgb(161, 221, 221);
+            background-color:rgb(234, 241, 241);
             box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
             cursor: pointer;
             margin-top: 50px;
@@ -87,6 +100,18 @@
 
         .card-title-single{
             margin-bottom: 5px ;
+        }
+
+
+        .card-btn-single{
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+           
+           padding-left: 50px;
+           padding-right: 50px;
+           margin-bottom: 50px;
+
         }
 
 

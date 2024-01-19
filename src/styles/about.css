@@ -1,0 +1,132 @@
+
+@media screen and (min-width:300px) and (max-width:768px) {
+
+    #about-page{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 50px;
+        background-color: #f1f190;
+        width: 100%;
+    }
+
+    #serving-wine{
+        width: 95%;
+        height: 300px;
+        border-radius: 5px;
+        margin-top: 30px;
+       
+    }
+
+
+
+    #socials{
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+
+    #socials>img{
+        width: 50px;
+        height: 50px;
+        cursor: pointer;
+        border-radius: 50%;
+    }
+
+    .about-page-section{
+        width: 95%;
+        margin-top: 50px;
+    }
+
+    #founders>h2{
+        text-align: center;
+    }
+
+
+    #founders{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+    #founders>img{
+        width: 300px;
+        height: 300px;
+        margin-top: 30px;
+        border-radius: 50%;
+    }
+
+
+
+}
+
+
+@media screen and (min-width:768px) and (max-width:1400px) {
+
+    #about-page{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 50px;
+        background-color: #f1f190;
+        width: 100%;
+    }
+
+    #serving-wine{
+        width: 95%;
+        height: 300px;
+        border-radius: 5px;
+        margin-top: 30px;
+       
+    }
+
+
+
+    #socials{
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+
+    #socials>img{
+        width: 50px;
+        height: 50px;
+        cursor: pointer;
+        border-radius: 50%;
+    }
+
+    .about-page-section{
+        width: 95%;
+        margin-top: 50px;
+    }
+
+    #founders>h2{
+        text-align: center;
+    }
+
+
+    #founders{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+    #founders>img{
+        width: 300px;
+        height: 300px;
+        margin-top: 30px;
+        border-radius: 50%;
+    }
+
+
+
+
+}

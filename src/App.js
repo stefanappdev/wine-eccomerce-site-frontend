@@ -16,6 +16,7 @@ import Checkout from './pages/Checkout';
 import { CartContextProvider } from './contexts/CartContext';
 import Logout from './pages/Logout';
 import Signup from './pages/Signup';
+import About from './pages/About';
 
 export default function App() {
     return (
@@ -59,6 +60,10 @@ export default function App() {
                         </Route>
 
                         <Route path="/logout" element={<Logout />} />
+
+                        <Route path="/about" element={<About/>}/>
+
+                        <Route path="*" element={<p>There's nothing here: 404!</p>} />
 
 
 

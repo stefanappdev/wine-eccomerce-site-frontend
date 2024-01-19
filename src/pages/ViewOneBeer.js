@@ -59,23 +59,20 @@ const ViewOneBeer = () => {
 
    
       
-     if(product.productType==="beers"&&product._id===Params.id){
-      PROD=product
-       return <div class="product-card-single" key={product._id}>
-            <img src={product.image==="NOIMG"?"No image available":product.image} className="card-img-top-single"  alt={`${product.productName}`}/>
-            <div className="card-body-single">
-              <h4 className="card-title-single ">{product.productName}</h4>
-              <p className="card-text-single">{product.description!==""?"description:"+product.description:""}</p>
-              <p className='important-details'>price:${product.price}</p>
-              <p className='important-details'> In stock:{product.quantity}</p>
-             <br/>
-              <button onClick={showModal}>Add to cart </button>
-              
-               
-            </div>
-
-            
-        </div>
+      if(product.productType==="beers"&&product._id===Params.id){
+        PROD=product
+         return <div class="product-card-single" key={product._id}>
+              <img src={product.image==="NOIMG"?"No image available":product.image} className="card-img-top-single" alt={`${product.productName}`}/>
+              <div className="card-body-single">
+                <h4 className="card-title-single ">{product.productName}</h4>
+                <p className="card-text-single">{product.description!==""?"description:"+product.description:""}</p>
+                <p className='important-details'>price:${product.price}</p>
+                <p className='important-details'> In stock:{product.quantity}</p>
+  
+              </div>
+  
+              <div className="card-btn-single"> <button  onClick={showModal}>Add to cart </button> </div> 
+          </div>
      }
     
   })

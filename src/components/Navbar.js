@@ -45,7 +45,7 @@ const Navbar = ()=>{
               }}
             >
 
-         <Link className="app-navlink" to="/">  
+         <Link className="app-navlink-dropdown" to="/">  
                  
                     
               <MenuItem onClick={handleClose}>
@@ -56,11 +56,23 @@ const Navbar = ()=>{
             </Link> 
 
 
-            <Link className="app-navlink" id="cart-link-mobile"  to={IsLoggedIn?`/users/${UserData._id}/checkout`:"/login"}>  
+            <Link className="app-navlink-dropdown" to="/about">  
+                 
+                    
+                 <MenuItem onClick={handleClose}>
+                  
+                   <p>About Us</p>
+                 
+                 </MenuItem>
+               </Link> 
+   
+
+
+            <Link className="app-navlink-dropdown" id="cart-link-dropdown"  to={IsLoggedIn?`/users/${UserData._id}/checkout`:"/login"}>  
                  
               <MenuItem onClick={handleClose}>
     
-                  <div id="cart-info-mobile">
+                  <div id="cart-info-dropdown">
                        
                       
                        <p>Cart</p>
@@ -76,7 +88,7 @@ const Navbar = ()=>{
 
            
 
-          <Link className="app-navlink" to="/products">  
+          <Link className="app-navlink-dropdown" to="/products">  
               <MenuItem onClick={handleClose}>
               
                      <p> Products</p>
@@ -84,7 +96,7 @@ const Navbar = ()=>{
                </MenuItem>  
                </Link> 
 
-            {!IsLoggedIn?<Link className="app-navlink"  to="/signup">   
+            {!IsLoggedIn?<Link className="app-navlink-dropdown"  to="/signup">   
               <MenuItem onClick={handleClose}>     
                      <p >Signup</p>
                  
@@ -92,14 +104,14 @@ const Navbar = ()=>{
             </Link>:""}
 
 
-            {!IsLoggedIn?<Link  className="app-navlink" id="login-link-mobile" to="/login">   
+            {!IsLoggedIn?<Link  className="app-navlink-dropdown" id="login-link-dropdown" to="/login">   
               <MenuItem onClick={handleClose}>     
                      <p >Login</p>
                  
                </MenuItem>
             </Link>:
             
-            <Link className="app-navlink" id="logout-link-mobile" to="/logout">   
+            <Link className="app-navlink-dropdown" id="logout-link-dropdown" to="/logout">   
               <MenuItem onClick={handleClose}>     
                      <p >Logout</p>
                  
@@ -119,24 +131,26 @@ const Navbar = ()=>{
             
          
             {IsLoggedIn&&<h2 id="nav-username"> Hi {WhoIsLoggedIn}</h2>}
+            
 
-            <Link className="app-navlink"  to={IsLoggedIn?`/users/${UserData._id}/checkout`:"/login"}>  
-                 
-             
-    
+
+              <h1 id="navbar-logo">HighSpirits🥂</h1>
+
+            <Link className="app-navlink-main"  to={IsLoggedIn?`/users/${UserData._id}/checkout`:"/login"}>  
+
                   <div id="cart-info-desktop">
-                        <p>Cart</p>
+                        <p>CART</p>
                       <div id="cart-counter">{Cart.length}</div>
                   </div>
             
               </Link>
-            
+          
 
             {IsLoggedIn?  
                  
                     
                  <Button id="logout-link-desktop" className="logout-login-btn">
-                  <Link className="app-navlink" to="/logout">
+                  <Link className="app-navlink-main" to="/logout">
                    <p>Logout</p>
                   </Link>
                  </Button>
@@ -144,11 +158,14 @@ const Navbar = ()=>{
               :
 
                  <Button id="login-link-desktop" className="logout-login-btn">
-                  <Link className="app-navlink"  to="/login">  
+                  <Link className="app-navlink-main"  to="/login">  
                    <p>Login</p>
                   </Link>
                  </Button>
               }
+
+
+    
 
       
     
@@ -156,7 +173,7 @@ const Navbar = ()=>{
 
       
       
-       <h1 id="navbar-logo">HighSpirits🥂</h1>
+     
 
 
 

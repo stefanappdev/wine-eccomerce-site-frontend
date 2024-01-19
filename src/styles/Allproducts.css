@@ -9,7 +9,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            background-color: rgb(161, 221, 221);
+            background-color:rgb(234, 241, 241);
             box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
             cursor: pointer;
             margin: 10px;
@@ -56,7 +56,7 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        background-color: rgb(161, 221, 221);
+        background-color:rgb(234, 241, 241);
         box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
         cursor: pointer;
         margin: 10px;

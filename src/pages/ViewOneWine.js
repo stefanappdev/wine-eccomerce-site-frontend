@@ -75,13 +75,10 @@ const ViewOneWine = () => {
                 <p className="card-text-single">{product.description!==""?"description:"+product.description:""}</p>
                 <p className='important-details'>price:${product.price}</p>
                 <p className='important-details'> In stock:{product.quantity}</p>
-               <br/>
-                <button  onClick={showModal}>Add to cart </button>
-                
-                 
+  
               </div>
   
-              
+              <div className="card-btn-single"> <button  onClick={showModal}>Add to cart </button> </div> 
           </div>
      }
     

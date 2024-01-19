@@ -26,7 +26,7 @@
       
     }
 
-    #cart-info-mobile{
+    #cart-info-dropdown{
         display: inline-flex;
         gap:5px;
       
@@ -64,26 +64,26 @@
         justify-content: row;
         align-items: center;
         height:100px;
-        width:100vw;
-        background-color: #0752AD;
+        width:100%;
+        gap: 10px;
+        background-color:#ad070f;
         padding: 50px;
       
     
     }
     
-    .app-navlink{
+    .app-navlink-dropdown{
         text-decoration: none;
-        margin-left:50px;
         cursor: pointer;
     }
-    .app-navlink>h1{
+    .app-navlink-dropdown>h1{
         color:whitesmoke;
         font-weight: bold;
         margin-left: 20px;
     }
 
     
-    .app-navlink p{
+    .app-navlink-dropdown p{
         color:black;
         font-weight: bold;
     }
@@ -104,6 +104,8 @@
 
     
 }
+
+/*for desktop*/
 
 @media screen and (min-width:701px) and (max-width:1440px) {
 
@@ -127,7 +129,8 @@
         font-size: 25px;
         align-self: center;
         margin-top: 50px;
-        margin-right: 100px;
+        margin-left: auto;
+
         
       }
    
@@ -147,35 +150,57 @@
         color: antiquewhite;
         font-weight: bolder;
         font-size: 15px;
-        margin-left: 30px;
+        margin-left: 20px;
+        
     }
     
     
     #app-navbar{
         display: inline-flex;
         align-items: center;
-        width: 100vw;
+        width: 100%;
+        margin: auto;
         height:100px;
-        background-color: #0752AD;
+        padding: 10px;
+        background-color: #ad070f;
     
+    }
+
+
+    .app-navlink-dropdown{
+        text-decoration: none;
+    }
+    
+    .app-navlink-dropdown p{
+        color:black;
+        font-weight: bold;
+        
     }
 
     
     
-    .app-navlink{
+    .app-navlink-main{
         text-decoration: none;
         margin-left:50px;
         cursor: pointer;
     }
-    .app-navlink>h1{
+    .app-navlink-main>h1{
+        color:whitesmoke;
+        font-weight: bolder;
+        margin-left: 20px;
+    }
+
+    .app-navlink-main>p{
         color:whitesmoke;
         font-weight: bold;
-        margin-left: 20px;
+        margin-right: 20px;
     }
 
     #cart-info-desktop{
         display: inline-flex;
         gap:10px;
+        align-items: center;
+        margin-left: 20px;
     
     }
 
@@ -186,27 +211,19 @@
         
     }
 
-  
 
 
-    .app-navlink p{
-        color:black;
-        font-weight: bold;
-    }
+    
 
-    .logout-login-btn p{
-        color:whitesmoke;
-    }
-
-    #logout-link-mobile{
+    #logout-link-dropdown{
         display: none;
     }
 
-    #login-link-mobile{
+    #login-link-dropdown{
         display: none;
     }
 
-    #cart-link-mobile{
+    #cart-link-dropdown{
         display: none;
     }
 

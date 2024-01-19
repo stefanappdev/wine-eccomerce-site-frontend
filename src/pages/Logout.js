@@ -11,7 +11,7 @@ function Logout() {
     const HandleLogout = () => {
         setIsLoggedIn(false);
         ClearCart();
-        alert('you have logged out');
+        alert('you have logged out,redirecting to login page');
 
         setTimeout(() => {
 
